@@ -8,10 +8,6 @@ body {
     text-align: center;
 }
 
-#showDialog {
-
-}
-
 div.inputs {
     display: grid;
     grid-template-columns: auto 1fr;
