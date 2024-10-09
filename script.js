@@ -1,27 +1,30 @@
 const myLibrary = [];
 
-function Book(name, author, pages, read) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(name, author, pages, read) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 
-    this.info = function () {
+    info() {
         return this.name + " by " + this.author + ", " +
             this.pages + " pages, " + (this.read ? "read" : "not read");
     }
-}
 
-Book.prototype.changeStatus = function () {
-    this.read = !this.read;
-}
-
-Book.prototype.removeFromLibrary = function () {
-    const index = myLibrary.indexOf(this);
-    if (index !== -1) {
-        myLibrary.splice(index, 1);
+    changeStatus() {
+        this.read = !this.read;
     }
-};
+
+    removeFromLibrary() {
+        const index = myLibrary.indexOf(this);
+        if (index !== -1) {
+            myLibrary.splice(index, 1);
+        }
+    }
+}
+
 
 function addBookToLibrary(name, author, pages, read) {
     const newBook = new Book(name, author, pages, read);
